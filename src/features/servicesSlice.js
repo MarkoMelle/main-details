@@ -38,7 +38,7 @@ export const servicesSlice = createSlice({
     fetchServiceDetailsFailure: (state, action) => {
       state.loadingDetails = false;
       state.errorDetails = action.payload;
-    }
+    },
   },
 });
 
@@ -48,7 +48,7 @@ export const {
   fetchServicesSuccess,
   fetchServicesFailure,
   fetchServiceDetailsSuccess,
-  fetchServiceDetailsFailure
+  fetchServiceDetailsFailure,
 } = servicesSlice.actions;
 
 export default servicesSlice.reducer;

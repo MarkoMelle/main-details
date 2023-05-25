@@ -1,9 +1,4 @@
-import {
-  put,
-  spawn,
-  call,
-  takeLatest,
-} from "redux-saga/effects";
+import { put, spawn, call, takeLatest } from "redux-saga/effects";
 import getServiceDetails from "../api/getServiceDetails";
 import getServices from "../api/getServices";
 import {
@@ -37,7 +32,6 @@ function* fetchServiceDetailsSaga(action) {
   }
 }
 
-
 function* watchFetchServiceDetailsSaga() {
   yield takeLatest(fetchServiceDetails.type, fetchServiceDetailsSaga);
 }
@@ -46,5 +40,3 @@ export default function* saga() {
   yield spawn(watchFetchServicesSaga);
   yield spawn(watchFetchServiceDetailsSaga);
 }
-
-

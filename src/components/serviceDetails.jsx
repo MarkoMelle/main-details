@@ -2,14 +2,16 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchServiceDetails } from "../features/servicesSlice";
 import ErrorFetch from "./errorFetch";
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams } from "react-router-dom";
 
-import { Box, CircularProgress, Typography } from '@mui/material';
+import { Box, CircularProgress, Typography } from "@mui/material";
 
 const ServicesDetails = () => {
   const { id } = useParams();
-  const location = useLocation(); 
-  const { details, loadingDetails, errorDetails } = useSelector((state) => state.services);
+  const location = useLocation();
+  const { details, loadingDetails, errorDetails } = useSelector(
+    (state) => state.services
+  );
   const dispatch = useDispatch();
 
   const reload = () => dispatch(fetchServiceDetails(id));
